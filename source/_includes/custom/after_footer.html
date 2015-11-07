@@ -1,7 +1,12 @@
 {% comment %}
   Add content to be output at the bottom of each page. (You might use this for analytics scripts, for example)
 {% endcomment %}
-{% if true %}
+
+{% if true or site.sticky_header %}
+  {% comment %}
+  Note that if you define `sticky_header: false` in _config.yml, the `true` above
+  must be removed.
+  {% endcomment %}
   <script>
     $(document).ready(function() {
       var stickyNavTop = $('nav').offset().top;
